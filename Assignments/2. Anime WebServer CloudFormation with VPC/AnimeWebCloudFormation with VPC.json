@@ -1,0 +1,717 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "CopyRights": {
+            "Type": "String",
+            "Description": "Copyright (c) [2023] @sky9262. All rights reserved. This software is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. The code may not be reproduced or distributed in any form or by any means, without the prior written permission of the copyright holder.",
+            "ConstraintDescription": "Please choose \"Accept\" to accept the copyright terms.",
+            "AllowedPattern": "^Accept$",
+            "AllowedValues": [
+                "Reject",
+                "Accept"
+            ]
+        },
+        "ImageId": {
+            "Type": "String",
+            "Description": "Linux AMI",
+            "Default": "ami-0b5eea76982371e91",
+            "AllowedValues": [
+                "ami-0b5eea76982371e91",
+                "ami-0fe472d8a85bc7b0e",
+                "ami-005b11f8b84489615"
+            ]
+        },
+        "InstanceType": {
+            "Type": "String",
+            "Description": "Choosing InstanceType",
+            "Default": "t3.micro",
+            "AllowedValues": [
+                "t3.micro",
+                "t2.micro",
+                "t2.nano",
+                "t3.nano"
+            ]
+        }
+    },
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "549b43b3-352e-455f-8e6a-7de5e9eb5b25": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -540,
+                    "y": -640
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": [],
+                "iscontainedinside": [
+                    "17ce9a13-4ada-429f-ac07-62ce3dfcef96"
+                ]
+            },
+            "04a6c6fe-3632-4da4-ae5f-f1addd8748f2": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -390,
+                    "y": -430
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": []
+            },
+            "bc31530e-a2d8-4baf-9950-9cedb515cc46": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -539,
+                    "y": -442
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": [],
+                "iscontainedinside": [
+                    "4451edce-d00c-4630-9534-4877e90c74bb",
+                    "c401b1c5-8820-4922-8f75-5370c2f41bb8"
+                ]
+            },
+            "d3e5a2fa-5ae5-41c2-9757-d55af54e534b": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -540,
+                    "y": -230
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": [],
+                "iscontainedinside": [
+                    "17ce9a13-4ada-429f-ac07-62ce3dfcef96"
+                ]
+            },
+            "dbff9882-63f7-45da-8844-87b71a885029": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -319,
+                    "y": -642
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": []
+            },
+            "17ce9a13-4ada-429f-ac07-62ce3dfcef96": {
+                "size": {
+                    "width": 890,
+                    "height": 570
+                },
+                "position": {
+                    "x": -1050,
+                    "y": -710
+                },
+                "z": 1,
+                "parent": "c401b1c5-8820-4922-8f75-5370c2f41bb8",
+                "embeds": [
+                    "ce93b3a4-da35-44a3-8805-14015dfbf5b4",
+                    "8a0abe00-16a7-4124-85ce-d6120007c306",
+                    "04a6c6fe-3632-4da4-ae5f-f1addd8748f2",
+                    "bc31530e-a2d8-4baf-9950-9cedb515cc46",
+                    "d3e5a2fa-5ae5-41c2-9757-d55af54e534b",
+                    "549b43b3-352e-455f-8e6a-7de5e9eb5b25",
+                    "5561c3d3-82ac-430a-9b64-d616796e4a85",
+                    "7dd588bc-55a2-4e7d-bb3e-18b7d2bc6d4c",
+                    "dbff9882-63f7-45da-8844-87b71a885029"
+                ]
+            },
+            "11f18da9-6ad8-4528-a4e0-e3b239691974": {
+                "size": {
+                    "width": 380,
+                    "height": 580
+                },
+                "position": {
+                    "x": 380,
+                    "y": -580
+                },
+                "z": 1,
+                "parent": "c401b1c5-8820-4922-8f75-5370c2f41bb8",
+                "embeds": []
+            },
+            "8a0abe00-16a7-4124-85ce-d6120007c306": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -980,
+                    "y": -480
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": [],
+                "isassociatedwith": [
+                    "ce93b3a4-da35-44a3-8805-14015dfbf5b4"
+                ],
+                "iscontainedinside": [
+                    "17ce9a13-4ada-429f-ac07-62ce3dfcef96"
+                ],
+                "dependson": [
+                    "7722a1b1-2571-4a83-b762-70734628aae2"
+                ]
+            },
+            "5561c3d3-82ac-430a-9b64-d616796e4a85": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -710,
+                    "y": -450
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": []
+            },
+            "7dd588bc-55a2-4e7d-bb3e-18b7d2bc6d4c": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -830,
+                    "y": -450
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": []
+            },
+            "ce93b3a4-da35-44a3-8805-14015dfbf5b4": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -950,
+                    "y": -620
+                },
+                "z": 2,
+                "parent": "17ce9a13-4ada-429f-ac07-62ce3dfcef96",
+                "embeds": [],
+                "iscontainedinside": [
+                    "4451edce-d00c-4630-9534-4877e90c74bb",
+                    "c401b1c5-8820-4922-8f75-5370c2f41bb8"
+                ]
+            },
+            "7722a1b1-2571-4a83-b762-70734628aae2": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -2130,
+                    "y": -410
+                },
+                "z": 0,
+                "embeds": [],
+                "dependson": [
+                    "17ce9a13-4ada-429f-ac07-62ce3dfcef96"
+                ]
+            },
+            "27f65713-7634-4c3b-8594-64b39065e94c": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -1800,
+                    "y": -400
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "7722a1b1-2571-4a83-b762-70734628aae2"
+                ],
+                "dependson": [
+                    "c5c5bd2d-2711-4818-819c-2419fb00dca3"
+                ]
+            },
+            "c5c5bd2d-2711-4818-819c-2419fb00dca3": {
+                "size": {
+                    "width": 140,
+                    "height": 140
+                },
+                "position": {
+                    "x": -1620,
+                    "y": -430
+                },
+                "z": 0,
+                "embeds": [],
+                "dependson": [
+                    "7722a1b1-2571-4a83-b762-70734628aae2",
+                    "27f65713-7634-4c3b-8594-64b39065e94c"
+                ]
+            },
+            "c401b1c5-8820-4922-8f75-5370c2f41bb8": {
+                "size": {
+                    "width": 2810,
+                    "height": 930
+                },
+                "position": {
+                    "x": -1430,
+                    "y": -830
+                },
+                "z": 0,
+                "embeds": [
+                    "11f18da9-6ad8-4528-a4e0-e3b239691974",
+                    "17ce9a13-4ada-429f-ac07-62ce3dfcef96"
+                ]
+            },
+            "86b08f24-158b-40b5-a299-55aa11f30d4b": {
+                "source": {
+                    "id": "c401b1c5-8820-4922-8f75-5370c2f41bb8"
+                },
+                "target": {
+                    "id": "7722a1b1-2571-4a83-b762-70734628aae2"
+                },
+                "z": 0
+            }
+        }
+    },
+    "Resources": {
+        "AnimeWeb": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-0b5eea76982371e91",
+                "InstanceType": "t3.micro",
+                "AvailabilityZone": "us-east-1a",
+                "KeyName": {
+                    "Ref": "AnimeWebKey"
+                },
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Sub": "#!/bin/bash\nyum update -y\nyum install -y httpd.x86_64\nsystemctl start httpd.service\nsystemctl enable httpd.service\nyum install -y git\ngit clone https://github.com/falselunatic/Anime.git\nmv ./Anime/* /var/www/html/\n"
+                    }
+                },
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sdm",
+                        "Ebs": {
+                            "VolumeType": "io1",
+                            "Iops": "200",
+                            "DeleteOnTermination": "false",
+                            "VolumeSize": "20"
+                        }
+                    },
+                    {
+                        "DeviceName": "/dev/sdk",
+                        "NoDevice": {}
+                    }
+                ],
+                "NetworkInterfaces": [
+                    {
+                        "GroupSet": [
+                            {
+                                "Ref": "AnimeSec"
+                            }
+                        ],
+                        "AssociatePublicIpAddress": "true",
+                        "DeviceIndex": "0",
+                        "DeleteOnTermination": "true",
+                        "SubnetId": {
+                            "Ref": "AnimeSubnet1"
+                        }
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "549b43b3-352e-455f-8e6a-7de5e9eb5b25"
+                }
+            }
+        },
+        "AnimeSec": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Allow http to client host",
+                "VpcId": {
+                    "Ref": "AnimeVPC"
+                },
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 80,
+                        "ToPort": 80,
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "bc31530e-a2d8-4baf-9950-9cedb515cc46"
+                }
+            }
+        },
+        "AnimeWeb2": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-0b5eea76982371e91",
+                "InstanceType": "t3.micro",
+                "AvailabilityZone": "us-east-1a",
+                "KeyName": {
+                    "Ref": "AnimeWebKey"
+                },
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Sub": "#!/bin/bash\nyum update -y\nyum install -y httpd.x86_64\nsystemctl start httpd.service\nsystemctl enable httpd.service\nyum install -y git\ngit clone https://github.com/falselunatic/Anime.git\nmv ./Anime/* /var/www/html/\n"
+                    }
+                },
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sdm",
+                        "Ebs": {
+                            "VolumeType": "io1",
+                            "Iops": "200",
+                            "DeleteOnTermination": "false",
+                            "VolumeSize": "20"
+                        }
+                    },
+                    {
+                        "DeviceName": "/dev/sdk",
+                        "NoDevice": {}
+                    }
+                ],
+                "NetworkInterfaces": [
+                    {
+                        "GroupSet": [
+                            {
+                                "Ref": "AnimeSec"
+                            }
+                        ],
+                        "AssociatePublicIpAddress": "true",
+                        "DeviceIndex": "0",
+                        "DeleteOnTermination": "true",
+                        "SubnetId": {
+                            "Ref": "AnimeSubnet1"
+                        }
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "d3e5a2fa-5ae5-41c2-9757-d55af54e534b"
+                }
+            }
+        },
+        "AnimeWebKey": {
+            "Type": "AWS::EC2::KeyPair",
+            "Properties": {
+                "KeyName": "MyKeyPair"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "04a6c6fe-3632-4da4-ae5f-f1addd8748f2"
+                }
+            }
+        },
+        "AnimeStorage": {
+            "Type": "AWS::EC2::Volume",
+            "Properties": {
+                "Size": "50",
+                "VolumeType": "gp2",
+                "MultiAttachEnabled": "false",
+                "Encrypted": "true",
+                "AvailabilityZone": {
+                    "Fn::GetAtt": [
+                        "AnimeWeb",
+                        "AvailabilityZone"
+                    ]
+                },
+                "Tags": [
+                    {
+                        "Key": "MyTag",
+                        "Value": "TagValue"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "dbff9882-63f7-45da-8844-87b71a885029"
+                }
+            }
+        },
+        "AnimeSubnet1": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "AnimeVPC"
+                },
+                "CidrBlock": "10.0.0.0/25",
+                "AvailabilityZone": "us-east-1a",
+                "MapPublicIpOnLaunch": "true",
+                "Tags": [
+                    {
+                        "Key": "use",
+                        "Value": "Anime"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "17ce9a13-4ada-429f-ac07-62ce3dfcef96"
+                }
+            },
+            "DependsOn": [
+                "AnimeVPC"
+            ]
+        },
+        "AnimeSubnet2": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "AnimeVPC"
+                },
+                "CidrBlock": "10.0.0.128/25",
+                "AvailabilityZone": "us-east-1b",
+                "Tags": [
+                    {
+                        "Key": "use",
+                        "Value": "Anime"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "11f18da9-6ad8-4528-a4e0-e3b239691974"
+                }
+            },
+            "DependsOn": [
+                "AnimeVPC"
+            ]
+        },
+        "AnimeELBGroup": {
+            "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+            "Properties": {
+                "Name": "AnimeELBGroup",
+                "Port": 80,
+                "Protocol": "HTTP",
+                "VpcId": {
+                    "Ref": "AnimeVPC"
+                },
+                "ProtocolVersion": "HTTP1",
+                "HealthCheckEnabled": "true",
+                "HealthCheckProtocol": "HTTP",
+                "HealthCheckPath": "/",
+                "TargetType": "instance",
+                "Targets": [
+                    {
+                        "Id": {
+                            "Ref": "AnimeWeb"
+                        },
+                        "Port": 80
+                    },
+                    {
+                        "Id": {
+                            "Ref": "AnimeWeb2"
+                        },
+                        "Port": 80
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "5561c3d3-82ac-430a-9b64-d616796e4a85"
+                }
+            }
+        },
+        "AnimeELB": {
+            "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+            "Properties": {
+                "Type": "application",
+                "Scheme": "internet-facing",
+                "IpAddressType": "ipv4",
+                "Subnets": [
+                    {
+                        "Ref": "AnimeSubnet1"
+                    },
+                    {
+                        "Ref": "AnimeSubnet2"
+                    }
+                ],
+                "SecurityGroups": [
+                    {
+                        "Ref": "AnimeELBSecurityGroup"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "8a0abe00-16a7-4124-85ce-d6120007c306"
+                }
+            },
+            "DependsOn": [
+                "AnimeVPCIG"
+            ]
+        },
+        "ElbListener": {
+            "Type": "AWS::ElasticLoadBalancingV2::Listener",
+            "Properties": {
+                "DefaultActions": [
+                    {
+                        "Type": "forward",
+                        "TargetGroupArn": {
+                            "Ref": "AnimeELBGroup"
+                        }
+                    }
+                ],
+                "LoadBalancerArn": {
+                    "Ref": "AnimeELB"
+                },
+                "Port": "80",
+                "Protocol": "HTTP"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "7dd588bc-55a2-4e7d-bb3e-18b7d2bc6d4c"
+                }
+            }
+        },
+        "AnimeELBSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupName": "AnimeELBTraffic",
+                "GroupDescription": "Enable HTTP access on the inbound port for ELB",
+                "VpcId": {
+                    "Ref": "AnimeVPC"
+                },
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 80,
+                        "ToPort": 80,
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 443,
+                        "ToPort": 443,
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "AnimeELBSecurityGroup"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "ce93b3a4-da35-44a3-8805-14015dfbf5b4"
+                }
+            }
+        },
+        "AnimeVPCIG": {
+            "Type": "AWS::EC2::InternetGateway",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "7722a1b1-2571-4a83-b762-70734628aae2"
+                }
+            },
+            "DependsOn": [
+                "AnimeSubnet1"
+            ]
+        },
+        "VPCGatewayAttachment": {
+            "Type": "AWS::EC2::VPCGatewayAttachment",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "AnimeVPC"
+                },
+                "InternetGatewayId": {
+                    "Ref": "AnimeVPCIG"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "86b08f24-158b-40b5-a299-55aa11f30d4b"
+                }
+            }
+        },
+        "AnimeRoute": {
+            "Type": "AWS::EC2::Route",
+            "Properties": {
+                "RouteTableId": {
+                    "Ref": "AnimeVPCRouteTable"
+                },
+                "DestinationCidrBlock": "0.0.0.0/0",
+                "GatewayId": {
+                    "Ref": "AnimeVPCIG"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "27f65713-7634-4c3b-8594-64b39065e94c"
+                }
+            },
+            "DependsOn": [
+                "AnimeVPCRouteTable"
+            ]
+        },
+        "AnimeVPCRouteTable": {
+            "Type": "AWS::EC2::RouteTable",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "AnimeVPC"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "c5c5bd2d-2711-4818-819c-2419fb00dca3"
+                }
+            },
+            "DependsOn": [
+                "AnimeVPCIG"
+            ]
+        },
+        "myPublicRouteTableAssociation": {
+            "Type": "AWS::EC2::SubnetRouteTableAssociation",
+            "Properties": {
+                "RouteTableId": {
+                    "Ref": "AnimeVPCRouteTable"
+                },
+                "SubnetId": {
+                    "Ref": "AnimeSubnet1"
+                }
+            }
+        },
+        "AnimeVPC": {
+            "Type": "AWS::EC2::VPC",
+            "Properties": {
+                "CidrBlock": "10.0.0.0/24",
+                "EnableDnsSupport": "true",
+                "EnableDnsHostnames": "true"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "c401b1c5-8820-4922-8f75-5370c2f41bb8"
+                }
+            }
+        }
+    }
+}

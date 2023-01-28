@@ -1,0 +1,167 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Template to Create an EC2 instance in a VPC",
+    "Parameters": {
+        "CopyRights": {
+            "Type": "String",
+            "Description": "Copyright (c) [2023] @sky9262. All rights reserved. This software is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. The code may not be reproduced or distributed in any form or by any means, without the prior written permission of the copyright holder.",
+            "ConstraintDescription": "Please choose \"Accept\" to accept the copyright terms.",
+            "AllowedPattern": "^Accept$",
+            "AllowedValues": [
+                "Reject",
+                "Accept"
+            ]
+        },
+        "VpcId": {
+            "Type": "String",
+            "Description": "VPC id",
+            "Default": "vpc-8854eef1"
+        },
+        "ImageId": {
+            "Type": "String",
+            "Description": "Linux 2 AMI for Ireland eu-west1 Region",
+            "Default": "ami-0b5eea76982371e91",
+            "AllowedValues": [
+                "ami-0b5eea76982371e91",
+                "ami-0fe472d8a85bc7b0e",
+                "ami-005b11f8b84489615"
+            ]
+        },
+        "InstanceType": {
+            "Type": "String",
+            "Description": "Choosing  t2 micro because it is free",
+            "Default": "t3.micro",
+            "AllowedValues": [
+                "t3.micro",
+                "t2.micro",
+                "t2.nano",
+                "t3.nano"
+            ]
+        }
+    },
+    "Resources": {
+        "WebServer": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-0b5eea76982371e91",
+                "InstanceType": "t3.micro",
+                "KeyName": "AnimeWebServerKey",
+                "SecurityGroupIds": [
+                    {
+                        "Ref": "WebServerSecurityGroup"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Sub": "#!/bin/bash\nyum update -y\nyum install -y httpd.x86_64\nsystemctl start httpd.service\nsystemctl enable httpd.service\nyum install -y git\ngit clone https://github.com/falselunatic/Anime.git\nmv ./Anime/* /var/www/html/\n"
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a351cbb5-b435-438c-829c-3df7a9b33cba"
+                }
+            },
+            "DependsOn": [
+                "AnimeWebServerKey"
+            ]
+        },
+        "WebServerSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "SG to allow http access via port 80",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "22",
+                        "ToPort": "22",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 80,
+                        "ToPort": 80,
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "EC2-WebServer"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "cc37919a-b200-48b9-9e3a-4647204c0d58"
+                }
+            }
+        },
+        "AnimeWebServerKey": {
+            "Type": "AWS::EC2::KeyPair",
+            "Properties": {
+                "KeyName": "AnimeWebServerKey"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "062f3538-8baa-4d5a-926b-e9115efea553"
+                }
+            }
+        }
+    },
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "cc37919a-b200-48b9-9e3a-4647204c0d58": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 60,
+                    "y": 90
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "a351cbb5-b435-438c-829c-3df7a9b33cba": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 190,
+                    "y": 90
+                },
+                "z": 1,
+                "embeds": [],
+                "isassociatedwith": [
+                    "cc37919a-b200-48b9-9e3a-4647204c0d58"
+                ],
+                "dependson": [
+                    "062f3538-8baa-4d5a-926b-e9115efea553"
+                ]
+            },
+            "062f3538-8baa-4d5a-926b-e9115efea553": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -40,
+                    "y": 90
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "4778757f-03da-4668-a21d-d9cd5e7f98da": {
+                "source": {
+                    "id": "a351cbb5-b435-438c-829c-3df7a9b33cba"
+                },
+                "target": {
+                    "id": "062f3538-8baa-4d5a-926b-e9115efea553"
+                },
+                "z": 2
+            }
+        }
+    }
+}
