@@ -1,4 +1,5 @@
-# AWS Developer Associate
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=45&pause=1000&color=FF9900&center=true&vCenter=true&width=700&lines=AWS+Developer+Associate)](https://github.com/sky9262/AWS-Developer-Associate)
+
 Hi, Dear
 
 My name is Akash and I am having AWS Developer Associate Certification Training through Simplilearn. I will upload here all the resources used or created during the Certification.
