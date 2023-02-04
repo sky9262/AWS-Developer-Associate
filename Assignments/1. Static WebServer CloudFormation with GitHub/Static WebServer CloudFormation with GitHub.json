@@ -12,11 +12,6 @@
                 "Accept"
             ]
         },
-        "VpcId": {
-            "Type": "String",
-            "Description": "VPC id",
-            "Default": "vpc-8854eef1"
-        },
         "ImageId": {
             "Type": "String",
             "Description": "Linux 2 AMI for Ireland eu-west1 Region",
@@ -29,7 +24,7 @@
         },
         "InstanceType": {
             "Type": "String",
-            "Description": "Choosing  t2 micro because it is free",
+            "Description": "Choosing any of the selected free instances type.",
             "Default": "t3.micro",
             "AllowedValues": [
                 "t3.micro",
