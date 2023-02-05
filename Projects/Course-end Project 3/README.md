@@ -2,9 +2,9 @@
 
 ### **Course-end Project 3**
 
-**Description:** Use Auto Scaling to manage the EC2 instances and use EC2 instance and capture the metrics in the CloudWatch.
+> **Description:** Use Auto Scaling to manage the EC2 instances and use EC2 instance and capture the metrics in the CloudWatch.
 
-**Tools required:** AWS Services - CloudWatch, Auto Scaling, EC2
+> **Tools required:** AWS Services - CloudWatch, Auto Scaling, EC2
 
 #### Solved in two ways:
 
