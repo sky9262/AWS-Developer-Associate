@@ -1,4 +1,4 @@
-# <p style="text-align: center;"> ==Projects== <p>
+#  Projects
 Hi, Dear
 
 My name is Akash and I am having AWS Developer Associate Certification Training through Simplilearn. I will upload here all the projescts completed during the Certification.
