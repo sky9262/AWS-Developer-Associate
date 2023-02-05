@@ -26,9 +26,9 @@ I will do it using just 4 major steps: -
 
 - Create New Launch Template ![1.png](./images/1.png)
 
-- Naming it as CWAutoScaleEC2
-- Choosing my OS as Amazon Linux and instance type t3.micro
-- Creating Key Pair named CW_AS_EC2
+- Naming it as `CWAutoScaleEC2`
+- Choosing my OS as `Amazon Linux` and instance type `t3.micro`
+- Creating Key Pair named `CW_AS_EC2`
 - Creating new security group and allow **SSH** to access it.
 - Rest of options leaving as default.
 
@@ -42,7 +42,7 @@ I will do it using just 4 major steps: -
 
 ![6.png](./images/6.png)
 
-- Create a new Auto Scaling Group named "ASG_CW"
+- Create a new Auto Scaling Group named `ASG_CW`
 - Selecting the launch template created before and click next
 
 ![6.1.png](./images/6.1.png)
@@ -63,7 +63,7 @@ I will do it using just 4 major steps: -
 
 **Create two Cloud Watch Alarms**
 
-- Open cloudwatch, go to **Alarms \> In alarm** and create a new alarm
+- Open cloudwatch, go to `Alarms > In alarm` and create a new alarm
 
 ![7.png](./images/7.png)
 
@@ -75,7 +75,7 @@ I will do it using just 4 major steps: -
 
 ![9.png](./images/9.png)
 
-- Now, select " **By Auto Scaling Group"**
+- Now, select `By Auto Scaling Group`
 
 ![10.png](./images/10.png)
 
@@ -83,7 +83,7 @@ I will do it using just 4 major steps: -
 
 ![11.png](./images/11.png)
 
-- Now, scroll down and select " **CPUUtilazation"** matric
+- Now, scroll down and select `CPUUtilazation` matric
 
 ![12.png](./images/12.png)
 
@@ -91,11 +91,11 @@ I will do it using just 4 major steps: -
 
 ![13.png](./images/13.png)
 
-- In notification, create new topic named " **CW_AS_Topic"** and email-ID and click next
+- In notification, create new topic named `CW_AS_Topic` and email-ID and click next
 
 ![14.png](./images/14.png)
 
-- Named it as **"Scale Up"**
+- Named it as `Scale Up`
 
 ![15.png](./images/15.png)
 
@@ -105,11 +105,11 @@ I will do it using just 4 major steps: -
 
 ![16.png](./images/16.png)
 
-- Now, instead of creating new topic **Select an existing SNS topic** and select the topic created before
+- Now, instead of creating new topic `Select an existing SNS topic` and select the topic created before
 
 ![17.png](./images/17.png)
 
-- Named it as **"Scale Down"** and create it.
+- Named it as `Scale Down` and create it.
 
 **Now, I have two alarm one for scale up when CPU utilization is more than 75% and second one for scale down when CPU utilization is less than 30%.**
 
@@ -117,12 +117,12 @@ I will do it using just 4 major steps: -
 
 **Final Configuration**
 
-- Now, go to the scaling group created before and **Create Dynamic Scaling Policy**
-- In Policy type, select **Simple scaling**
-- Named it as "ScaleUp"
+- Now, go to the scaling group created before and `Create Dynamic Scaling Policy`
+- In Policy type, select `Simple scaling`
+- Named it as `ScaleUp`
 - Choose the Scale Up CloudWatch alarm
 - In Take the action option, choose Add and enter the number of instances want to create.
-- In Take the action option, choose instead of capacity units choose **Percent of group**
+- In Take the action option, choose instead of capacity units choose `Percent of group`
 
 ![20.png](./images/20.png)
 
@@ -136,8 +136,8 @@ I will do it using just 4 major steps: -
 
 **Connect to times to the instance one to keep tracking its CPU usages and one for Spike up the instance.**
 
-1. **Use** top –I **command to track.**
-2. **Use** yes \> /dev/null | yes \> /dev/null
+1. **Use** `top –I` **command to track.**
+2. **Use** `yes \> /dev/null | yes \> /dev/null` **command to spike up cpu utilization.**
 
 **Result:** It'll add two instances in the group when the average CPU utilization of the group will be greater than 75% and when the average CPU utilization of the group will be lower than 30% it'll remove one instance from the group.
 
