@@ -2,9 +2,7 @@
 
 Deploy a static webserver using a GutHub Repository with CloudFormation.
 
-## Mentor
 
-**Ritesh Behal**
 
 
 ## AWS Resources
