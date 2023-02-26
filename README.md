@@ -3,9 +3,6 @@
 Hi, Dear
 
 My name is Akash and I am having AWS Developer Associate Certification Training through Simplilearn. I will upload here all the resources used or created during the Certification.
-## Mentor
-
-**Ritesh Behal**
 
 ![Template Diagram](./aws-developer-associate.jpg)
 
