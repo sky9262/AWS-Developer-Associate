@@ -11,9 +11,6 @@
 AWS Console            |  CloudFormation
 :-------------------------:|:-------------------------:
 [<img src="./images/b1.png">](./Amazon%20Console.md)  |  [<img src="./images/b2.png">](./Code.yaml)
-## Mentor
-
-**Ritesh Behal**
 
 
 ## AWS Resources
