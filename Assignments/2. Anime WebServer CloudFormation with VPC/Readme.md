@@ -2,9 +2,7 @@
 Instructions:
 - Create a VPC and two subnets public and private. 
 - Deploy to WebServer and use Elastic Load Balancer to distribute traffic 
-## Mentor
 
-**Ritesh Behal**
 
 ## AWS Resources
 * VPC
