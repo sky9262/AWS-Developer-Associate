@@ -7,11 +7,9 @@ My name is Akash and I am having AWS Developer Associate Certification Training 
 | **List of Projects**     
 | ---      
 | [Course-end Project 3](./Course-end%20Project%203/) 
+| [Course-end Project 2](./Course-end%20Project%202/) 
 
 
-## Mentor
-
-**Ritesh Behal**
 
 ![projcts.jpeg](./projcts.jpeg)
 
