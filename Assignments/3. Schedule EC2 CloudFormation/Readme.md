@@ -2,9 +2,6 @@
 Instructions:
 - Deploy a EC2 Webserver. 
 - Schedule it to start at 10 AM and stop it at 06 PM.
-## Mentor
-
-**Ritesh Behal**
 
 
 ## My Conclusion 
