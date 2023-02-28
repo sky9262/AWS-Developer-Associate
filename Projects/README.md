@@ -5,9 +5,9 @@ My name is Akash and I am having AWS Developer Associate Certification Training 
 <hr/>
 
 | **List of Projects**     
-| ---      
-| [Course-end Project 3](./Course-end%20Project%203/) 
+| ---       
 | [Course-end Project 2](./Course-end%20Project%202/) 
+| [Course-end Project 3](./Course-end%20Project%203/)
 
 
 
